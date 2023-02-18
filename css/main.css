@@ -1,0 +1,517 @@
+* {
+    font-family: 'Work Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #10cab7;
+    --secondry-color: #2c4755;
+    --main-gray: #ebeced;
+    --gray-color: #f6f6f6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Start of global rules */
+h1 {
+    color: var(--main-color);
+    font-weight: 800;
+    font-size: 55px;
+}
+
+h3 {
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+
+p {
+    line-height: 1.6;
+    font-size: 20px;
+}
+
+.secTitle {
+    text-align: center;
+    margin: 40px 20px;
+}
+
+.secTitle h2 {
+    font-size: 160px;
+    font-weight: 800;
+    letter-spacing: -12px;
+    color: var(--main-gray);
+    margin: 0;
+}
+
+.secTitle p {
+    font-size: 25px;
+    margin-top: -65px;
+}
+
+@media (max-width: 767px) {
+    h1 {
+        font-weight: 700;
+        font-size: 40px;
+    }
+
+    .secTitle {
+        margin: 20px 5px;
+    }
+
+    .secTitle h2 {
+        font-size: 80px;
+    }
+
+    .secTitle p {
+        font-size: 16px;
+        margin-top: -30px;
+    }
+}
+
+/* End of global rules */
+
+/* nav start */
+header {
+    height: 45px;
+}
+
+nav {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img {
+    width: 45px;
+    margin: 5px;
+}
+
+nav div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+nav div:hover ul {
+    display: block;
+}
+
+nav div:hover span:nth-child(2) {
+    width: 30px;
+}
+
+nav div span {
+    padding: 3px 0px;
+    width: 30px;
+    border-bottom: 2px solid black;
+    justify-content: center;
+}
+
+nav div span:nth-child(2) {
+    width: 20px;
+    align-self: end;
+    transition: all 0.5s;
+}
+
+ul {
+    background-color: var(--gray-color);
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 25px;
+    display: none;
+}
+
+ul::before {
+    content: "";
+    border-width: 15px;
+    border-color: transparent transparent var(--gray-color) transparent;
+    border-style: solid;
+    position: absolute;
+    top: -30px;
+    right: 0;
+}
+
+ul li {
+    list-style: none;
+    width: 150px;
+    line-height: 1.7;
+    padding: 0 20px;
+
+}
+
+ul li:not(:last-child) {
+    border-bottom: 1px solid var(--main-gray);
+}
+
+ul li a {
+    text-decoration: none;
+    color: black;
+    transition: all 0.5s;
+}
+
+ul li a:hover {
+    padding-left: 10px;
+    font-weight: 500;
+}
+
+/* nav end */
+/* landing start */
+.landing {
+    background-image: url(../images/Mountain_Gray.jpg);
+    background-size: cover;
+    height: calc(70vh - 45px);
+    background-position: bottom;
+}
+
+
+.container {
+    position: absolute;
+    max-width: 400px;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    .landing {
+        height: calc(100vh - 45px);
+    }
+
+    .container {
+        top: 50%;
+    }
+}
+
+/* landing end */
+/* cards start */
+.works {
+    min-height: 30vh;
+    padding-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: var(--gray-color);
+}
+
+.works .card {
+    width: 400px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* .works .card:nth-child(2) {
+    box-shadow: 8px 9px 8px 0px var(--main-gray);
+} */
+
+
+.works .card i {
+    font-size: 75px;
+    color: var(--main-color);
+    padding-bottom: 15px;
+}
+
+.works .card p {
+    font-size: 15px;
+}
+
+/* cards end */
+/* services start */
+
+/* #services {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+} */
+
+
+#services .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 0 50px;
+    margin-top: 75px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#services .col {
+    text-align: center;
+    margin-left: 50px;
+    padding-right: 20px;
+}
+
+
+#services .element {
+    text-align: left;
+    position: relative;
+}
+
+#services .element i {
+    position: absolute;
+    top: -8px;
+    left: -60px;
+    font-size: 38px;
+    color: var(--main-color);
+}
+
+#services .element p {
+    font-size: 15px;
+}
+
+.image::before {
+    content: "";
+    width: 100px;
+    height: 400px;
+    top: -40px;
+    position: absolute;
+    background-color: var(--secondry-color);
+    right: -10%;
+    z-index: -1;
+}
+
+.image img {
+    width: 250px;
+}
+
+.image {
+    position: relative;
+    width: 250px;
+
+}
+
+
+
+@media (max-width: 767px) {
+    .works .card i {
+        font-size: 50px;
+    }
+
+    .works {
+        height: auto;
+    }
+
+}
+
+@media (max-width: 1300px) {
+
+    #services .col:last-child {
+        display: none;
+    }
+
+}
+
+/* services end */
+
+/* porfolio start */
+#porfolio {
+    background-color: var(--gray-color);
+}
+
+#porfolio .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 0 50px;
+    margin-top: 75px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#porfolio .col {
+    text-align: left;
+    background-color: white;
+}
+
+#porfolio img {
+    width: 100%;
+}
+
+#porfolio .col h3 {
+    padding: 0 10px;
+}
+
+#porfolio .col p {
+    font-size: 15px;
+    padding: 0 10px;
+}
+
+/* porfolio start */
+/* about start */
+#about {
+    padding: 20px 0;
+}
+
+#about .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 0 50px;
+    margin-top: 75px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#about .col {
+    text-align: left;
+}
+
+#about .col:first-child {
+    text-align: center;
+}
+
+#about img {
+    width: 250px;
+}
+
+#about .col .image {
+    position: relative;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#about .col .image::before {
+    content: "";
+    width: 100px;
+    height: calc(100% + 40px);
+    top: -20px;
+    position: absolute;
+    background-color: var(--gray-color);
+    left: -10px;
+    z-index: -1;
+}
+
+#about .col .image::after {
+    content: "";
+    width: 80px;
+    background-color: transparent;
+    height: calc(80% - 40px);
+    top: -20px;
+    position: absolute;
+    right: -100px;
+    z-index: -1;
+    border-left: 80px solid var(--main-color);
+    border-bottom: 60px solid var(--main-color);
+}
+
+@media (max-width: 767px) {
+    #about .col .image {
+        display: none;
+    }
+}
+
+#about .col h3 {
+    padding: 0 10px;
+}
+
+#about .col p:not(:first-child) {
+    font-size: 15px;
+    padding: 0 10px;
+    font-weight: 100;
+}
+
+#about .col p {
+    padding: 0 10px;
+    font-weight: 800;
+}
+
+#about .col hr {
+    width: 50%;
+    border-color: var(--main-color);
+    display: inline-block;
+}
+
+/* about End */
+/* contact start */
+#contact {
+    padding: 20px 0;
+    background-color: var(--gray-color);
+}
+
+#contact .content {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+
+}
+
+
+#contact .content p,
+#contact .content a {
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 0;
+    color: var(--secondry-color);
+}
+
+
+#contact .content a {
+    color: var(--main-color);
+}
+
+#contact .social p {
+    font-size: 18px;
+    font-weight: 100;
+    display: inline-block;
+
+}
+
+#contact .social i {
+    font-size: 18px;
+    padding-left: 15px;
+    color: var(--secondry-color);
+}
+
+#contact .social i:hover {
+    color: var(--main-color);
+}
+
+@media (max-width: 767px) {
+
+    #contact .content p,
+    #contact .content a {
+        font-size: 20px;
+        font-weight: 800;
+        margin-bottom: 0;
+        color: var(--secondry-color);
+    }
+
+    #contact .content a {
+        color: var(--main-color);
+    }
+}
+
+/* contact start */
+
+/* footer start */
+footer {
+    height: 80px;
+    background-color: var(--secondry-color);
+    text-align: center;
+}
+
+footer p {
+    font-size: 15px;
+    font-weight: 800;
+    color: white;
+    transform: translate(0%, 100%);
+}
+
+footer span {
+    color: var(--main-color);
+}
+
+/* footer End */
