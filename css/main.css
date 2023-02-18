@@ -1,24 +1,38 @@
-* {
-    font-family: 'Work Sans', sans-serif;
-    box-sizing: border-box;
-}
+/* Start variables */
 
 :root {
     --main-color: #10cab7;
     --secondry-color: #2c4755;
     --main-gray: #ebeced;
     --gray-color: #f6f6f6;
+    --section-padding: 60px;
+}
+
+/* End variables */
+
+/* Start of global rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-/* Start of global rules */
+body {
+    font-family: 'Work Sans', sans-serif;
+}
+
+/* Osama added a container as global rules here
+also he add container width for 3 media sizes */
+
 h1 {
     color: var(--main-color);
     font-weight: 800;
     font-size: 55px;
+    margin: 0;
 }
 
 h3 {
@@ -34,20 +48,21 @@ p {
 
 .secTitle {
     text-align: center;
-    margin: 40px 20px;
+    margin: -20px 0 0;
 }
 
 .secTitle h2 {
-    font-size: 160px;
+    font-size: 150px;
     font-weight: 800;
-    letter-spacing: -12px;
+    letter-spacing: -5px;
     color: var(--main-gray);
     margin: 0;
 }
 
 .secTitle p {
     font-size: 25px;
-    margin-top: -65px;
+    margin: -30px 0 0;
+    line-height: 0;
 }
 
 @media (max-width: 767px) {
@@ -70,11 +85,19 @@ p {
     }
 }
 
+#services,
+#porfolio,
+#about,
+#contact {
+    padding-bottom: var(--section-padding);
+    padding-top: var(--section-padding);
+}
+
 /* End of global rules */
 
 /* nav start */
 header {
-    height: 45px;
+    padding: 20px;
 }
 
 nav {
@@ -88,15 +111,16 @@ nav {
 }
 
 nav img {
-    width: 45px;
-    margin: 5px;
+    height: 24px;
 }
 
 nav div {
     position: relative;
+}
+
+nav div .bar {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
 }
 
 nav div:hover ul {
@@ -120,16 +144,18 @@ nav div span:nth-child(2) {
     transition: all 0.5s;
 }
 
-ul {
+nav ul {
+    list-style: none;
     background-color: var(--gray-color);
     padding: 0;
     position: absolute;
     right: 0;
-    top: 25px;
+    top: calc(100% + 4px);
+    min-width: 200px;
     display: none;
 }
 
-ul::before {
+nav ul::before {
     content: "";
     border-width: 15px;
     border-color: transparent transparent var(--gray-color) transparent;
@@ -140,10 +166,8 @@ ul::before {
 }
 
 ul li {
-    list-style: none;
-    width: 150px;
-    line-height: 1.7;
-    padding: 0 20px;
+    /* line-height: 1.7; */
+    padding: 15px;
 
 }
 
@@ -169,6 +193,7 @@ ul li a:hover {
     background-size: cover;
     height: calc(70vh - 45px);
     background-position: bottom;
+    position: relative;
 }
 
 
@@ -176,7 +201,7 @@ ul li a:hover {
     position: absolute;
     max-width: 400px;
     left: 50%;
-    top: 25%;
+    top: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
 }
@@ -186,20 +211,17 @@ ul li a:hover {
         height: calc(100vh - 45px);
     }
 
-    .container {
-        top: 50%;
-    }
 }
 
 /* landing end */
 /* cards start */
 .works {
     min-height: 30vh;
-    padding-top: 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     background-color: var(--gray-color);
+    padding: 40px 0 10px 0;
 }
 
 .works .card {
@@ -214,9 +236,7 @@ ul li a:hover {
 
 
 .works .card i {
-    font-size: 75px;
     color: var(--main-color);
-    padding-bottom: 15px;
 }
 
 .works .card p {
@@ -225,13 +245,6 @@ ul li a:hover {
 
 /* cards end */
 /* services start */
-
-/* #services {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-} */
-
 
 #services .content {
     display: grid;
@@ -435,7 +448,6 @@ ul li a:hover {
 /* about End */
 /* contact start */
 #contact {
-    padding: 20px 0;
     background-color: var(--gray-color);
 }
 
