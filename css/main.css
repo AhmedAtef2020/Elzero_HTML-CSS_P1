@@ -153,6 +153,7 @@ nav ul {
     top: calc(100% + 4px);
     min-width: 200px;
     display: none;
+    z-index: 2;
 }
 
 nav ul::before {
@@ -522,7 +523,7 @@ footer p {
     transform: translate(0%, 100%);
 }
 
-footer a {
+footer p a {
     color: var(--main-color);
     text-decoration: none;
 }
