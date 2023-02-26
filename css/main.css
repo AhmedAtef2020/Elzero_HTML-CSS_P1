@@ -522,8 +522,9 @@ footer p {
     transform: translate(0%, 100%);
 }
 
-footer span {
+footer a {
     color: var(--main-color);
+    text-decoration: none;
 }
 
 /* footer End */
